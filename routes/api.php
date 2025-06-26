@@ -8,4 +8,4 @@ Route::get('/test', function(){
 });
 
 
-Route::get('/backend', [BackendController::class, 'get']);
+Route::get('/backend/{id?}', [BackendController::class, 'get']);
