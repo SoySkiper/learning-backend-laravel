@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class BackendController extends Controller
 {
@@ -18,10 +19,10 @@ class BackendController extends Controller
     }
 
     public function get(int $id = 0){
-        return response()->json([
-            'id' => $id,
-            'success' => true,
-            'message' => 'Todo un fullstack developer.',
-        ]);
+        if(isset($this->names[$id])){
+            return response()->json($this->names[$id]);
+        } else {
+            return response()->json(["error" => "Person not found"], Response::HTTP_NOT_FOUND);
+        }
     }
 }
