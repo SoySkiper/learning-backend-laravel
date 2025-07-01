@@ -7,5 +7,6 @@ Route::get('/test', function(){
     return "Todo un fullstack developer.";
 });
 
+Route::get('/backend', [BackendController::class, 'getAll']);
 
 Route::get('/backend/{id?}', [BackendController::class, 'get']);
