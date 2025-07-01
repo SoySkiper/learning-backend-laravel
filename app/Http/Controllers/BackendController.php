@@ -50,4 +50,13 @@ class BackendController extends Controller
         }
         return response()->json(["error" => "Person not found"], Response::HTTP_NOT_FOUND);
     }
+
+    public function delete(int $id)
+    { 
+        if (isset($this->names[$id])) {
+            unset($this->names[$id]);
+            return response()->json(["message" => "Person deleted successfully"]);
+        }
+        return response()->json(["error" => "Person not found"], Response::HTTP_NOT_FOUND);
+    }
 }
