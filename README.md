@@ -1,61 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Curso Personal - Cristian Primero
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descripción del Proyecto
 
-## About Laravel
+Este repositorio contiene los ejercicios y aprendizajes del curso de Laravel y PHP que estoy tomando. Cada commit está ligado a un tema específico del curso, y se documenta tanto el código como los comandos útiles utilizados en el proceso.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Temas cubiertos hasta ahora (según commits)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- HTTP requests con métodos GET, POST, PUT, DELETE
+- Códigos de respuesta HTTP con Symfony
+- Envío de parámetros en rutas
+- Creación y ejecución de migraciones
+- Modificación de tablas con migraciones
+- Uso de llaves foráneas
+- Creación de seeders
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Comandos útiles
 
-## Learning Laravel
+### 🖥️ Servidor local con PHP:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```bash
+php -S localhost:4411 -t public
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Ejecuta un servidor local desde la carpeta `public` en el puerto `4411`.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🛠️ Migraciones:
 
-## Laravel Sponsors
+```bash
+php artisan make:migration create_product_table
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Crea una migración para la tabla `product`.
 
-### Premium Partners
+```bash
+php artisan make:migration add_price_to_product_table --table=product
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Crea una migración para agregar la columna `price` a la tabla `product`.
 
-## Contributing
+```bash
+php artisan migrate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Ejecuta todas las migraciones pendientes.
 
-## Code of Conduct
+```bash
+php artisan migrate:rollback
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Revierte la última migración.
 
-## Security Vulnerabilities
+```bash
+php artisan migrate:reset
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Revierte todas las migraciones ejecutadas.
 
-## License
+```bash
+php artisan migrate:fresh --seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Elimina todas las tablas y vuelve a ejecutar todas las migraciones con sus seeders.
+
+### 🔗 Relaciones y llaves foráneas:
+
+```bash
+php artisan make:migration create_category_table
+```
+
+Crea la tabla `category`.
+
+```bash
+php artisan make:migration add_category_id_to_product_table --table=product
+```
+
+Agrega la columna `category_id` a la tabla `product`.
+
+### 🌱 Seeders:
+
+```bash
+php artisan make:seeder CategoryTableSeeder
+```
+
+Crea un seeder para la tabla `category`.
+
+```bash
+php artisan db:seed
+```
+
+Ejecuta todos los seeders registrados.
+
+## Notas
+
+Este proyecto es estrictamente educativo, cada sección está vinculada a los temas del curso. Los comandos listados aquí están en constante crecimiento a medida que avanza el curso.
+
+---
+
+**Autor:** Cristian Primero
+
+---
+
+Para más información sobre Laravel:
+
+- [Documentación Oficial de Laravel](https://laravel.com/docs)
+- [Laravel Bootcamp](https://bootcamp.laravel.com)
+- [Laracasts](https://laracasts.com)
+
