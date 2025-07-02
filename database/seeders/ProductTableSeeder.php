@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class ProductTableSeeder extends Seeder
 {
@@ -13,6 +14,9 @@ class ProductTableSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $faker = Faker::create();
+
         $categoryIds = DB::table('category')->pluck('id')->toArray();
 
         if(empty($categoryIds)) {
@@ -22,10 +26,10 @@ class ProductTableSeeder extends Seeder
 
         for( $i = 1; $i <= 50; $i++) {
             $products[] = [
-                'name' => 'Product ' . $i,
-                'description' => 'Description for product ' . $i,
-                'price' => rand(100, 1000),
-                'category_id' => $categoryIds[array_rand($categoryIds)],
+                'name' => $faker->word,
+                'description' => $faker->sentence,
+                'price' => $faker->randomFloat(2, 5, 500),
+                'category_id' => $faker->randomElement($categoryIds),
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
