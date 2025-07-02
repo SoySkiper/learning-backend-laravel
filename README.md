@@ -114,3 +114,7 @@ php artisan make:seeder ProductTableSeeder
 php artisan db:seed --class=ProductTableSeeder
 
 php artisan migrate:fresh --seed
+
+php artisan make:model Category
+
+php artisan make:model Product 
