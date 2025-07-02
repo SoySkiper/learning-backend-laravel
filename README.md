@@ -118,3 +118,4 @@ php artisan migrate:fresh --seed
 php artisan make:model Category
 
 php artisan make:model Product 
+
