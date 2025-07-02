@@ -119,3 +119,4 @@ php artisan make:model Category
 
 php artisan make:model Product 
 
+php artisan make:factory CategoryFactory
