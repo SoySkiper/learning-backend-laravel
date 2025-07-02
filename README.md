@@ -1,4 +1,4 @@
-# Laravel Curso Personal - Cristian Primero
+## Curso de laravel
 
 ## Descripción del Proyecto
 
@@ -105,4 +105,8 @@ Para más información sobre Laravel:
 - [Documentación Oficial de Laravel](https://laravel.com/docs)
 - [Laravel Bootcamp](https://bootcamp.laravel.com)
 - [Laracasts](https://laracasts.com)
+- [Curso de programación backend en PHP laravel](https://www.udemy.com/course/curso-de-programacion-backend-en-php-laravel/)
 
+
+## Más comandos apartir de la última actualización de Readme
+php artisan make:seeder ProductTableSeeder
