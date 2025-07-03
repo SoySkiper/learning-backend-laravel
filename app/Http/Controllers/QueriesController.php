@@ -21,4 +21,11 @@ class QueriesController extends Controller
             return response()->json(['message' => 'Product not found'], Response::HTTP_NOT_FOUND);
         }
     }
+
+    public function getNames() {
+        $products = Product::select('name')
+            ->orderBy('name', 'desc')
+            ->get();
+        return response()->json($products);
+    }
 }
