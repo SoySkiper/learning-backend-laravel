@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\QueriesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/test', function(){
@@ -16,3 +17,5 @@ Route::post('/backend', [BackendController::class, 'create']);
 Route::put('/backend/{id}', [BackendController::class, 'update']);
 
 Route::delete('/backend/{id}', [BackendController::class, 'delete']);
+
+Route::get('/query', [QueriesController::class, 'get']);

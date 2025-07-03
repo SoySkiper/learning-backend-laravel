@@ -122,3 +122,5 @@ php artisan make:model Product
 php artisan make:factory CategoryFactory
 
 php artisan migrate:fresh --seed
+
+php artisan make:controller QueriesController
