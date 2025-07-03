@@ -28,4 +28,14 @@ class QueriesController extends Controller
             ->get();
         return response()->json($products);
     }
+
+    public function searchNames(string $name, float $price) {
+        $products = Product::where('name', $name)
+            ->where('price', '>', $price)
+            ->orderBy('name', 'asc')
+            ->select('name', 'description', 'price')
+            ->get();
+
+        return response()->json($products);
+    }
 }
