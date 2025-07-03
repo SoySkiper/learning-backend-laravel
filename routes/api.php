@@ -18,4 +18,5 @@ Route::put('/backend/{id}', [BackendController::class, 'update']);
 
 Route::delete('/backend/{id}', [BackendController::class, 'delete']);
 
-Route::get('/query', [QueriesController::class, 'get']);
+Route::get('/query', [QueriesController::class, 'getAll']);
+Route::get('/query/{id}', [QueriesController::class, 'getById']);
